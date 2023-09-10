@@ -7,7 +7,7 @@ class Queries:
   def consultarEmpleado(nombre):
     response = Response()
     try:
-      connection = Connection.connectionOpen(Constants.DB_TRAM)
+      connection = Connection.connectionOpen()
       if connection.body["message"] == Constants.MSG_SUCCESS:
         cursor = connection.object.cursor()
         query = """

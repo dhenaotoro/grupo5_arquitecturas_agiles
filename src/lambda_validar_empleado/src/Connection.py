@@ -4,7 +4,7 @@ from utils.Response import Response
 
 class Connection:
     
-  def connectionOpen(database):
+  def connectionOpen():
     response = Response()
     try:
       connection = psycopg2.connect(
@@ -12,7 +12,7 @@ class Connection:
         password = Constants.DB_PASS,
         host = Constants.DB_SERVER,
         port = Constants.DB_PORT,
-        database = database
+        database = Constants.DB_BD
       )
       response.object = connection
       response.body["message"] = Constants.MSG_SUCCESS
