@@ -2,16 +2,17 @@ import psycopg2
 import boto3
 import json
 import logging
+from os import environ
 
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 # Database connection parameters
-db_host = 'database-abcjobs.c9eflzbfr7ql.us-east-1.rds.amazonaws.com'
-db_port = 5432
-db_name = 'postgres'
-db_user = 'postgres'
-db_password = 'abcjobsdb'
+_LAMBDA_SSM_RESOURCE = { "db_host" : environ.get("DATABASE_CONNECTION", "NONE"),
+                         "db_port": environ.get("PORT", "NONE"),
+                         "db_name": environ.get("DATABASE_NAME", "NONE"),
+                         "db_user": environ.get("USER_NAME","NONE"),
+                         "db_password": environ.get("PASSWORD","NONE")}
 
 # Initialize SQS client
 sqs = boto3.client('sqs', region_name='us-east-1')  # Specify your AWS region
@@ -24,11 +25,11 @@ def insert_data_into_postgres(data):
         # Establish a connection to the PostgreSQL database
         logger.debug(data)
         conn = psycopg2.connect(
-            host=db_host,
-            port=db_port,
-            database=db_name,
-            user=db_user,
-            password=db_password,
+            host=_LAMBDA_SSM_RESOURCE["db_host"],
+            port=_LAMBDA_SSM_RESOURCE["db_port"],
+            database=_LAMBDA_SSM_RESOURCE["db_name"],
+            user=_LAMBDA_SSM_RESOURCE["db_user"],
+            password=_LAMBDA_SSM_RESOURCE["db_password"],
         )
 
         # Create a cursor object
