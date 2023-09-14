@@ -2,7 +2,7 @@
 
 A continuación compartimos la arquitectura que seguimos para validar la historia de usuario "Registrar empleado". Esta arquitectura fue hecha en la nube AWS:
 
-![image](https://github.com/dhenaotoro/grupo5_arquitecturas_agiles/assets/78186561/4e03e841-a82e-473d-9b9a-be1a01c50312)
+![image](https://github.com/dhenaotoro/grupo5_arquitecturas_agiles/assets/78186561/8d24b4d9-0701-49e9-bcae-d042adb28b8f)
 
 # Datos de conexión a AWS:
  - Account ID: misogrupo1
