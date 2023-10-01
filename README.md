@@ -6,7 +6,7 @@ A continuación compartimos la arquitectura que seguimos para validar las histor
 
 # Datos de conexión a AWS:
 
-Tener en cuenta que el trabajo fue realizado con servicios en la nube de Amazon, por tanto, gran parte de este trabajo se puede visualizar al ingresar a la consola web de Amazon con las siguientes credenciales.
+Tener en cuenta que el trabajo fue realizado con servicios en AWS, por tanto, gran parte de este trabajo se puede visualizar al ingresar a la consola web de Amazon con las siguientes credenciales.
 
  - Account ID: misogrupo1
  - IAM user name: misogrupo1
@@ -26,6 +26,12 @@ Por tanto se podrá consumir este endpoint usando POSTMAN de acuerdo a como se m
 La lambda de login se denomina: `loginTest` con el fin de poder encontrarla en la consola de AWS
 
 La base de datos se encuentra en el servicio RDS de la consola de AWS y se denomina: `database-test`
+
+# Análisis de los resultados obtenidos:
+
+Luego de la ejecución del experimiento utilizando la arquitectura anteriormente descrita en AWS, se pudo confirmar la hipótesis de diseño planteada en la semana 7 del curso. Tanto para las historias de usuario de Consultar Evaluación de Candidato como Registro de Candidato, fue posible introducir simulación de ataques en el componente de Login de un usuario de ABC Jobs para acceder al sistema, así como implementar las tácticas de arquitectura de seguridad respectivas que al final permitieron validar el experimiento propuesto.
+
+La ampliación del análisis por cada una de las tácticas utilizadas, por favor referirse al cuaderno de trabajo Experimentación - Módulo 8 (Experimentación), diapositiva 4. El cuaderno se encuentra cargado en la tarea respectiva dentro de Coursera.
 
 # grupo5_arquitecturas_agiles analisis de disponibilidad
 
