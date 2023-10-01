@@ -11,7 +11,6 @@ class Queries:
       if connection.body["message"] == Constants.MSG_SUCCESS:
         cursor = connection.object.cursor()
         query = "SELECT * FROM abcjobslogin WHERE usuario = '" + usuario + "' AND (password = '"+ password + "')"
-        print("QUERYYYY {}".format(query))
         cursor.execute(query)
         response.body["object"] = cursor.fetchall()
         print("ROWS {}".format(response.body["object"]))
