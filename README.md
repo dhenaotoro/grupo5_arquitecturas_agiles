@@ -23,7 +23,7 @@ Por tanto se podrá consumir este endpoint usando POSTMAN de acuerdo a como se m
 
 ![image](https://github.com/dhenaotoro/grupo5_arquitecturas_agiles/assets/78186561/95957497-673c-4991-8e93-0dd04adbbc75)
 
-La lambda de login se denomina: ´loginTest´ con el fin de poder encontrarla en la consola de AWS
+La lambda de login se denomina: `loginTest` con el fin de poder encontrarla en la consola de AWS
 
 La base de datos se encuentra en el servicio RDS de la consola de AWS y se denomina: `database-test`
 
